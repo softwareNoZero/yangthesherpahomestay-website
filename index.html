@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yang "The Sherpa" Homestay — Animated</title>
+  <title>Yang "The Sherpa" Homestay</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -35,11 +35,11 @@
   </style>
 </head>
 
-<body class="bg-[--bg] text-gray-800" onload="AOS.init({duration:600,once:true});">
+<body class="bg-[--bg] text-gray-800 pt-16">
 
 <!-- Header -->
-<header class="fixed w-full bg-white/90 backdrop-blur-sm z-40 shadow-sm">
-  <div class="container mx-auto flex items-center justify-between p-4">
+<header class="fixed w-full bg-white/90 backdrop-blur-sm z-40 shadow-sm h-16">
+  <div class="container mx-auto flex items-center justify-between h-full px-4">
     <div class="flex items-center space-x-3">
       <div class="w-10 h-10 rounded-lg bg-[--primary] flex items-center justify-center text-white font-semibold">Y</div>
       <div class="text-lg font-semibold">Yang "The Sherpa" Homestay</div>
@@ -57,8 +57,8 @@
 </header>
 
 <!-- Hero -->
-<section class="relative w-full h-screen/1 md:h-[80vh] mt-16" data-aos="zoom-in">
-  <img src="okoko.jpg" alt="Yang The Sherpa Homestay" class="w-full h-full object-cover">
+<section class="relative w-full h-screen md:h-[80vh]">
+  <img src="images/okoko.jpg" alt="Yang The Sherpa Homestay" class="w-full h-full object-cover">
   <div class="absolute inset-0 bg-black/35 flex items-center">
     <div class="container mx-auto px-6 text-white">
       <h1 class="text-3xl md:text-5xl font-bold leading-tight max-w-3xl" data-aos="fade-up" data-aos-delay="100">
@@ -69,23 +69,22 @@
       </p>
       <div class="mt-6 flex flex-col sm:flex-row gap-3" data-aos="fade-up" data-aos-delay="300">
         <a href="#booking" class="inline-block bg-[--primary] px-5 py-3 rounded-md text-white shadow">Book Your Stay</a>
-      <a href="https://wa.me/919876543210" target="_blank"
-   class="inline-block bg-[#25D366] hover:bg-[#1ebe57] text-white px-4 py-2 rounded-full shadow transition">
-  💬 Contact on WhatsApp
-</a>
-
+        <a href="https://wa.me/919876543210" target="_blank"
+           class="inline-block bg-[#25D366] hover:bg-[#1ebe57] text-white px-4 py-2 rounded-full shadow transition">
+          💬 Contact on WhatsApp
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- About -->
+<!-- About + Room Slider -->
 <section class="py-12 container mx-auto px-6 md:px-12">
   <div class="md:flex md:items-center md:gap-12">
     
-    <!-- Room Slider (Auto + Manual) -->
+    <!-- Room Slider -->
     <div class="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg group" data-aos="fade-right">
-      <img id="room-slider" src="room1.jpg" alt="Room sample"
+      <img id="room-slider" src="images/photo1.jpg" alt="Room sample"
            class="w-full h-72 object-cover transition-opacity duration-700 ease-in-out opacity-100 rounded-lg">
 
       <!-- Navigation Buttons -->
@@ -207,16 +206,11 @@
 
 <!-- Scripts -->
 <script>
-  if (window.AOS) AOS.init({duration:600, once:true});
+document.addEventListener('DOMContentLoaded', () => {
+  if(window.AOS) AOS.init({duration:600, once:true});
 
   // ROOM SLIDER
-    const roomImages = [
-    "images/photo1.jpg",
-    "images/photo2.jpg",
-    "images/photo3.jpg",
-    "images/photo4.jpg",
-    "images/photo5.jpg"
-  ];
+  const roomImages = ["images/photo1.jpg","images/photo2.jpg","images/photo3.jpg","images/photo4.jpg","images/photo5.jpg"];
   let currentIndex = 0;
   const slider = document.getElementById("room-slider");
   const dots = document.querySelectorAll(".dot");
@@ -228,7 +222,7 @@
       slider.src = roomImages[currentIndex];
       dots.forEach((d, i) => d.classList.toggle("bg-white", i === currentIndex));
       slider.classList.remove("opacity-0");
-    }, 500);
+    }, 300);
   };
 
   let slideInterval = setInterval(() => updateSlide(currentIndex + 1), 4000);
@@ -245,17 +239,15 @@
     slideInterval = setInterval(() => updateSlide(currentIndex + 1), 4000);
   });
 
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      clearInterval(slideInterval);
-      updateSlide(i);
-      slideInterval = setInterval(() => updateSlide(currentIndex + 1), 4000);
-    });
-  });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => {
+    clearInterval(slideInterval);
+    updateSlide(i);
+    slideInterval = setInterval(() => updateSlide(currentIndex + 1), 4000);
+  }));
 
   updateSlide(0);
 
-  // BOOKING (WhatsApp)
+  // BOOKING
   const bookingForm = document.getElementById('booking-form');
   const bookingMessage = document.getElementById('booking-message');
   bookingForm.addEventListener('submit', function(e){
@@ -331,8 +323,10 @@ Guests: ${guests}`;
       setTimeout(()=>thankYouMsg.classList.add('hidden'),3500);
     });
   });
+});
 </script>
 
 </body>
 </html>
+
 
