@@ -48,17 +48,17 @@
       <a href="#booking" class="hover:text-[--primary]">Book</a>
       <a href="#gallery" class="hover:text-[--primary]">Gallery</a>
       <a href="#reviews" class="hover:text-[--primary]">Reviews</a>
-      <a href="https://wa.me/917407422123" target="_blank" class="bg-[#25D366] hover:bg-[#1ebe57] text-white px-3 py-2 rounded-md">Contact</a>
+      <a href="https://wa.me/917407422123" target="_blank" class="bg-[--primary] text-white px-3 py-2 rounded-md">Contact</a>
     </nav>
     <div class="md:hidden">
-      <a href="https://wa.me/917407422123" target="_blank" class="bg-[#25D366] hover:bg-[#1ebe57] text-white px-3 py-2 rounded-md text-sm">Contact</a>
+      <a href="https://wa.me/917407422123" target="_blank" class="bg-[--primary] text-white px-3 py-2 rounded-md text-sm">Contact</a>
     </div>
   </div>
 </header>
 
 <!-- Hero -->
 <section class="relative w-full h-screen/1 md:h-[80vh] mt-16" data-aos="zoom-in">
-  <img src="images/okoko.jpg" alt="Yang The Sherpa Homestay" class="w-full h-full object-cover">
+  <img src="okoko.jpg" alt="Yang The Sherpa Homestay" class="w-full h-full object-cover">
   <div class="absolute inset-0 bg-black/35 flex items-center">
     <div class="container mx-auto px-6 text-white">
       <h1 class="text-3xl md:text-5xl font-bold leading-tight max-w-3xl" data-aos="fade-up" data-aos-delay="100">
@@ -69,10 +69,11 @@
       </p>
       <div class="mt-6 flex flex-col sm:flex-row gap-3" data-aos="fade-up" data-aos-delay="300">
         <a href="#booking" class="inline-block bg-[--primary] px-5 py-3 rounded-md text-white shadow">Book Your Stay</a>
-        <a href="https://wa.me/919876543210" target="_blank"
-           class="inline-block bg-[#25D366] hover:bg-[#1ebe57] text-white px-4 py-2 rounded-full shadow transition">
-           💬 Contact on WhatsApp
-        </a>
+      <a href="https://wa.me/919876543210" target="_blank"
+   class="inline-block bg-[#25D366] hover:bg-[#1ebe57] text-white px-4 py-2 rounded-full shadow transition">
+  💬 Contact on WhatsApp
+</a>
+
       </div>
     </div>
   </div>
@@ -82,16 +83,22 @@
 <section class="py-12 container mx-auto px-6 md:px-12">
   <div class="md:flex md:items-center md:gap-12">
     
-    <!-- Room Slider -->
+    <!-- Room Slider (Auto + Manual) -->
     <div class="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg group" data-aos="fade-right">
-      <img id="room-slider" src="images/room1.jpg" alt="Room sample"
+      <img id="room-slider" src="room1.jpg" alt="Room sample"
            class="w-full h-72 object-cover transition-opacity duration-700 ease-in-out opacity-100 rounded-lg">
 
+      <!-- Navigation Buttons -->
       <button id="prev-room"
-              class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">←</button>
+              class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
+        ←
+      </button>
       <button id="next-room"
-              class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">→</button>
+              class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
+        →
+      </button>
 
+      <!-- Dots indicator -->
       <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
         <span class="dot w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer"></span>
         <span class="dot w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer"></span>
@@ -116,6 +123,58 @@
   </div>
 </section>
 
+<!-- Booking -->
+<section id="booking" class="py-12" data-aos="fade-up" data-aos-offset="200">
+  <div class="max-w-lg mx-auto px-6">
+    <div class="bg-white rounded-2xl shadow-lg p-6">
+      <h3 class="text-xl font-semibold mb-4">Book Your Stay</h3>
+      <form id="booking-form" class="space-y-3">
+        <input id="guest-name" type="text" placeholder="Your Name" class="w-full p-3 border rounded-md" required>
+        <input id="guest-email" type="email" placeholder="Email" class="w-full p-3 border rounded-md" required>
+        <input id="guest-phone" type="tel" placeholder="Phone" class="w-full p-3 border rounded-md" required>
+        <div class="flex gap-3">
+          <div class="flex-1">
+            <label class="block text-sm mb-1">From (Check-in)</label>
+            <input id="checkin-date" type="date" class="w-full p-3 border rounded-md" required>
+          </div>
+          <div class="flex-1">
+            <label class="block text-sm mb-1">To (Check-out)</label>
+            <input id="checkout-date" type="date" class="w-full p-3 border rounded-md" required>
+          </div>
+        </div>
+        <input id="num-guests" type="number" min="1" placeholder="Number of Guests" class="w-full p-3 border rounded-md" required>
+        <button type="submit" class="w-full bg-[--primary] text-white py-3 rounded-md">Submit Booking Request</button>
+        <p id="booking-message" class="text-green-600 mt-3 text-center hidden">✅ Booking ready — check WhatsApp!</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="py-12 bg-[--bg]">
+  <div class="container mx-auto px-6 max-w-3xl">
+    <h3 class="text-2xl font-semibold mb-4 text-center">Guest Reviews</h3>
+    <div class="bg-white rounded-lg shadow p-5 mb-6" data-aos="fade-up">
+      <div class="mb-3">
+        <div id="star-rating" class="flex gap-2 text-2xl">
+          <span data-value="1" class="text-gray-300">★</span>
+          <span data-value="2" class="text-gray-300">★</span>
+          <span data-value="3" class="text-gray-300">★</span>
+          <span data-value="4" class="text-gray-300">★</span>
+          <span data-value="5" class="text-gray-300">★</span>
+        </div>
+      </div>
+      <input id="reviewer-name" type="text" placeholder="Your Name" class="w-full p-3 border rounded-md mb-3">
+      <textarea id="review-text" rows="3" placeholder="Write your review" class="w-full p-3 border rounded-md mb-3"></textarea>
+      <div class="flex justify-between items-center">
+        <button id="submit-review" class="bg-[--primary] text-white py-2 px-4 rounded-md">Submit Review</button>
+        <p id="thankyou-message" class="text-green-600 hidden">Thanks — review posted!</p>
+      </div>
+    </div>
+    <div id="reviews-list" class="space-y-4" data-aos="fade-up" data-aos-delay="100"></div>
+  </div>
+</section>
+
 <!-- Gallery -->
 <section id="gallery" class="py-12" data-aos="fade-up">
   <div class="container mx-auto px-6">
@@ -131,9 +190,27 @@
   </div>
 </section>
 
-<!-- Script (Room Slider Update) -->
+<!-- Map -->
+<section class="py-12 bg-[--bg]">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <h3 class="text-2xl font-semibold text-center mb-4">Find Us on Google Maps</h3>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3554.7243122309947!2d88.17403187522784!3d27.007269376590894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e42d20be3907a9%3A0xba8c5fab887a2af9!2sMajhidhura%20YANG%20'the%20sherpa'%20countryside%20Homestay!5e0!3m2!1sen!2sin!4v1760261312636!5m2!1sen!2sin"
+      width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white py-6">
+  <div class="container mx-auto px-6 text-center text-sm text-gray-600">© Yang "The Sherpa" Homestay</div>
+</footer>
+
+<!-- Scripts -->
 <script>
-  const roomImages = [
+  if (window.AOS) AOS.init({duration:600, once:true});
+
+  // ROOM SLIDER
+    const roomImages = [
     "images/photo1.jpg",
     "images/photo2.jpg",
     "images/photo3.jpg",
@@ -177,7 +254,85 @@
   });
 
   updateSlide(0);
+
+  // BOOKING (WhatsApp)
+  const bookingForm = document.getElementById('booking-form');
+  const bookingMessage = document.getElementById('booking-message');
+  bookingForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('guest-name').value.trim();
+    const email = document.getElementById('guest-email').value.trim();
+    const phone = document.getElementById('guest-phone').value.trim();
+    const checkin = document.getElementById('checkin-date').value;
+    const checkout = document.getElementById('checkout-date').value;
+    const guests = document.getElementById('num-guests').value;
+    if(!name||!email||!phone||!checkin||!checkout||!guests){alert('Please fill all fields.');return;}
+    const msg = `Hello! I would like to book a stay at Yang "The Sherpa" Homestay.
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+From: ${checkin}
+To: ${checkout}
+Guests: ${guests}`;
+    window.open('https://wa.me/917407422123?text='+encodeURIComponent(msg),'_blank');
+    bookingMessage.classList.remove('hidden');
+    setTimeout(()=> bookingMessage.classList.add('hidden'),3500);
+    bookingForm.reset();
+  });
+
+  // REVIEWS
+  const stars = document.querySelectorAll('#star-rating span');
+  const submitBtn = document.getElementById('submit-review');
+  const reviewText = document.getElementById('review-text');
+  const reviewerName = document.getElementById('reviewer-name');
+  const reviewsList = document.getElementById('reviews-list');
+  const thankYouMsg = document.getElementById('thankyou-message');
+  let selectedRating = 0;
+
+  stars.forEach(star=>star.addEventListener('click',()=>{
+    selectedRating = parseInt(star.dataset.value,10);
+    stars.forEach((s,i)=> s.classList.toggle('text-yellow-400',i<selectedRating));
+  }));
+
+  const sanitize = t=>{ const e=document.createElement('div'); e.textContent=t; return e.innerHTML; };
+
+  const renderReviews = docs=>{
+    reviewsList.innerHTML='';
+    docs.forEach(doc=>{
+      const r = doc.data();
+      const name = sanitize(r.name||'Anonymous');
+      const text = sanitize(r.text||'');
+      let dateString='Just now';
+      if(r.timestamp && r.timestamp.toDate) dateString = r.timestamp.toDate().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});
+      const el = document.createElement('div');
+      el.className='bg-white p-4 rounded-lg shadow';
+      el.innerHTML=`<div class="font-semibold">${name}</div>
+        <div class="text-yellow-400 text-lg">${'★'.repeat(r.rating||0)}<span class="text-gray-300">${'★'.repeat(5-(r.rating||0))}</span></div>
+        <p class="text-gray-700 mt-1">${text}</p>
+        <div class="text-xs text-gray-500 mt-1">${dateString}</div>`;
+      reviewsList.appendChild(el);
+    });
+  };
+
+  const loadReviews = ()=> db.collection('reviews').orderBy('timestamp','desc').limit(10).get().then(snap=>renderReviews(snap.docs));
+  loadReviews();
+
+  submitBtn.addEventListener('click',()=>{
+    const name = reviewerName.value.trim()||'Anonymous';
+    const text = reviewText.value.trim();
+    if(!selectedRating||!text){alert('Please select stars and write your review.');return;}
+    db.collection('reviews').add({
+      name,text,rating:selectedRating,timestamp:firebase.firestore.FieldValue.serverTimestamp()
+    }).then(()=>{
+      thankYouMsg.classList.remove('hidden');
+      reviewerName.value=''; reviewText.value=''; selectedRating=0;
+      stars.forEach(s=>s.classList.remove('text-yellow-400'));
+      loadReviews();
+      setTimeout(()=>thankYouMsg.classList.add('hidden'),3500);
+    });
+  });
 </script>
+
 </body>
 </html>
 
