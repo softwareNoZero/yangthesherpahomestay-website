@@ -325,47 +325,32 @@ Guests: ${guests}`;
         });
       }
 
-      // SIMPLE review submit (client-side demo)
-      const submitReviewBtn = document.getElementById('submit-review');
-      const reviewerName = document.getElementById('reviewer-name');
-      const reviewText = document.getElementById('review-text');
-      const thankyou = document.getElementById('thankyou-message');
-      const reviewsList = document.getElementById('reviews-list');
+  <!-- Google Reviews Section -->
+  <section id="reviews" class="py-16 bg-white text-center">
+    <h2 class="text-4xl font-bold text-[--primary] mb-4">Check Our Reviews</h2>
+    <p class="text-gray-600 mb-10 text-lg">See what guests are saying about us on Google!</p>
 
-      if (submitReviewBtn) {
-        submitReviewBtn.addEventListener('click', () => {
-          const name = reviewerName.value.trim() || 'Anonymous';
-          const text = reviewText.value.trim();
-          if (!text) {
-            alert('Please write a short review before submitting.');
-            return;
-          }
+    <div class="container mx-auto max-w-4xl">
+      <!-- Embed Google Reviews (replace with your actual Google Maps embed link) -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!4v1719570520487!6m8!1m7!1sCAoSLEFGMVFpcFBMN1J4UlNvYm5Oc1VGa3o1WmVSWktQZmcyemhXdmxTdFdDVXJf!2m2!1d27.011234!2d88.250123!3f0!4f0!5f0.7820865974627469"
+        width="100%" 
+        height="500" 
+        style="border:0;border-radius:16px;box-shadow:0 5px 20px rgba(0,0,0,0.1);" 
+        allowfullscreen 
+        loading="lazy">
+      </iframe>
 
-          // Add to page (demo only). Persisting should use Firestore (optional).
-          const card = document.createElement('div');
-          card.className = 'bg-white p-4 rounded-lg shadow';
-          card.innerHTML = `<div class="font-semibold">${name}</div><div class="text-sm text-gray-600 mt-1">${text}</div>`;
-          if (reviewsList) reviewsList.prepend(card);
-
-          reviewerName.value = '';
-          reviewText.value = '';
-          if (thankyou) {
-            thankyou.classList.remove('hidden');
-            setTimeout(()=> thankyou.classList.add('hidden'), 2500);
-          }
-
-          // OPTIONAL: save to Firestore (uncomment and adjust rules if you want)
-          /*
-          db.collection('reviews').add({
-            name,
-            text,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
-          }).then(()=> console.log('Saved review to Firestore'));
-          */
-        });
-      }
-    });
-  </script>
+      <!-- Google Review Button -->
+      <div class="mt-8">
+        <a href="https://www.google.com/maps/place/Yang+The+Sherpa+Homestay" 
+           target="_blank" 
+           class="inline-block bg-[--primary] text-white text-lg px-6 py-3 rounded-lg shadow-md hover:bg-blue-800 transition">
+           ⭐ View All Google Reviews
+        </a>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
