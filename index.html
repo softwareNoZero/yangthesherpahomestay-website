@@ -38,23 +38,37 @@
 <body class="bg-[--bg] text-gray-800 pt-16">
 
 <!-- Header -->
-<header class="fixed w-full bg-white/90 backdrop-blur-sm z-40 shadow-sm h-16">
-  <div class="container mx-auto flex items-center justify-between h-full px-4">
+<header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-md">
+  <div class="container mx-auto flex items-center justify-between px-4 py-3">
+    <!-- Logo and Title -->
     <div class="flex items-center space-x-3">
-      <div class="w-10 h-10 rounded-lg bg-[--primary] flex items-center justify-center text-white font-semibold">Y</div>
-      <div class="text-lg font-semibold">Yang "The Sherpa" Homestay</div>
+      <div class="w-10 h-10 rounded-lg bg-[--primary] flex items-center justify-center text-white font-bold text-lg">Y</div>
+      <div class="text-lg md:text-xl font-semibold text-[--primary]">Yang "The Sherpa" Homestay</div>
     </div>
-    <nav class="hidden md:flex items-center space-x-6 text-sm">
-      <a href="#booking" class="hover:text-[--primary]">Book</a>
-      <a href="#gallery" class="hover:text-[--primary]">Gallery</a>
-      <a href="#reviews" class="hover:text-[--primary]">Reviews</a>
-      <a href="https://wa.me/917407422123" target="_blank" class="bg-[--primary] text-white px-3 py-2 rounded-md">Contact</a>
+
+    <!-- Navigation -->
+    <nav class="hidden md:flex items-center space-x-6 font-medium">
+      <a href="#booking" class="text-[--primary] transition hover:text-blue-700 hover:underline">Book</a>
+      <a href="#gallery" class="text-[--primary] transition hover:text-blue-700 hover:underline">Gallery</a>
+      <a href="#reviews" class="text-[--primary] transition hover:text-blue-700 hover:underline">Reviews</a>
+      <a href="https://wa.me/917407422123" 
+         target="_blank" 
+         class="bg-[#25D366] text-white px-4 py-2 rounded-md shadow hover:bg-[#1ebe57] transition">
+         Contact
+      </a>
     </nav>
+
+    <!-- Mobile Contact Button -->
     <div class="md:hidden">
-      <a href="https://wa.me/917407422123" target="_blank" class="bg-[--primary] text-white px-3 py-2 rounded-md text-sm">Contact</a>
+      <a href="https://wa.me/917407422123" 
+         target="_blank" 
+         class="bg-[#25D366] text-white px-3 py-2 rounded-md text-sm shadow hover:bg-[#1ebe57] transition">
+         Contact
+      </a>
     </div>
   </div>
 </header>
+
 
 <!-- Hero -->
 <section class="relative w-full h-screen md:h-[80vh]">
@@ -271,60 +285,47 @@ Guests: ${guests}`;
     setTimeout(()=> bookingMessage.classList.add('hidden'),3500);
     bookingForm.reset();
   });
+<!-- Reviews -->
+<section id="reviews" class="py-16 bg-[--bg]" data-aos="fade-up">
+  <div class="container mx-auto px-6 max-w-3xl text-center">
+    <h3 class="text-3xl font-semibold mb-3 text-gray-900">Guest Reviews</h3>
+    <p class="text-gray-600 mb-8">
+      Hear what our guests say about their stay at 
+      <span class="font-medium text-[--primary]">Yang "The Sherpa" Homestay</span> —
+      real experiences, honest feedback, and heartfelt memories.
+    </p>
 
-  // REVIEWS
-  const stars = document.querySelectorAll('#star-rating span');
-  const submitBtn = document.getElementById('submit-review');
-  const reviewText = document.getElementById('review-text');
-  const reviewerName = document.getElementById('reviewer-name');
-  const reviewsList = document.getElementById('reviews-list');
-  const thankYouMsg = document.getElementById('thankyou-message');
-  let selectedRating = 0;
+    <!-- Main review card -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-8">
+      <div class="flex flex-col items-center">
+        <div class="flex items-center gap-2 mb-2">
+          <div class="text-4xl font-bold text-green-600">4.7</div>
+          <div class="text-yellow-400 text-2xl">★★★★★</div>
+        </div>
+        <p class="text-gray-600 mb-6">Based on 150+ verified guest ratings</p>
 
-  stars.forEach(star=>star.addEventListener('click',()=>{
-    selectedRating = parseInt(star.dataset.value,10);
-    stars.forEach((s,i)=> s.classList.toggle('text-yellow-400',i<selectedRating));
-  }));
+        <!-- Call to action buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://www.google.com/maps/place/Majhidhura+YANG+'the+sherpa'+countryside+Homestay/@27.0072693,88.1740319,17z/data=!3m1!4b1!4m8!3m7!1s0x39e42d20be3907a9:0xba8c5fab887a2af9!8m2!3d27.0072693!4d88.1766068!9m1!1b1!16s%2Fg%2F11s7rpfqf4?entry=ttu"
+             target="_blank"
+             class="inline-flex items-center justify-center bg-[--primary] text-white px-5 py-2.5 rounded-md shadow hover:bg-blue-800 transition text-sm sm:text-base">
+            ⭐ Check and See Reviews Here
+          </a>
 
-  const sanitize = t=>{ const e=document.createElement('div'); e.textContent=t; return e.innerHTML; };
+          <a href="https://search.google.com/local/writereview?placeid=ChIJqQc5viAt5DkR-Sp6iKtfjLo"
+             target="_blank"
+             class="inline-flex items-center justify-center border border-[--primary] text-[--primary] px-5 py-2.5 rounded-md hover:bg-[--primary] hover:text-white transition text-sm sm:text-base">
+            ✍️ Write a Review
+          </a>
+        </div>
+      </div>
+    </div>
 
-  const renderReviews = docs=>{
-    reviewsList.innerHTML='';
-    docs.forEach(doc=>{
-      const r = doc.data();
-      const name = sanitize(r.name||'Anonymous');
-      const text = sanitize(r.text||'');
-      let dateString='Just now';
-      if(r.timestamp && r.timestamp.toDate) dateString = r.timestamp.toDate().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});
-      const el = document.createElement('div');
-      el.className='bg-white p-4 rounded-lg shadow';
-      el.innerHTML=`<div class="font-semibold">${name}</div>
-        <div class="text-yellow-400 text-lg">${'★'.repeat(r.rating||0)}<span class="text-gray-300">${'★'.repeat(5-(r.rating||0))}</span></div>
-        <p class="text-gray-700 mt-1">${text}</p>
-        <div class="text-xs text-gray-500 mt-1">${dateString}</div>`;
-      reviewsList.appendChild(el);
-    });
-  };
+    <!-- Optional embedded Google reviews (if API works) -->
+    <div id="google-reviews" class="space-y-4" data-aos="fade-up"></div>
+  </div>
+</section>
 
-  const loadReviews = ()=> db.collection('reviews').orderBy('timestamp','desc').limit(10).get().then(snap=>renderReviews(snap.docs));
-  loadReviews();
-
-  submitBtn.addEventListener('click',()=>{
-    const name = reviewerName.value.trim()||'Anonymous';
-    const text = reviewText.value.trim();
-    if(!selectedRating||!text){alert('Please select stars and write your review.');return;}
-    db.collection('reviews').add({
-      name,text,rating:selectedRating,timestamp:firebase.firestore.FieldValue.serverTimestamp()
-    }).then(()=>{
-      thankYouMsg.classList.remove('hidden');
-      reviewerName.value=''; reviewText.value=''; selectedRating=0;
-      stars.forEach(s=>s.classList.remove('text-yellow-400'));
-      loadReviews();
-      setTimeout(()=>thankYouMsg.classList.add('hidden'),3500);
-    });
-  });
-});
-</script>
 
 </body>
 </html>
