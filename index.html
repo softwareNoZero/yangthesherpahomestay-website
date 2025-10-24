@@ -12,12 +12,12 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-  <!-- Firebase (compat) -->
+  <!-- Firebase (compat) - Keeping for potential future use -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
   <script>
-    // --- Firebase config ---
+    // --- Firebase config (keeping for potential future use) ---
     const firebaseConfig = {
       apiKey: "AIzaSyBz8I9n7b7oxlT5n3fT1EsFpsxJNboGGL8",
       authDomain: "yang-the-sherpa-homestay.firebaseapp.com",
@@ -186,41 +186,55 @@
     </div>
   </section>
 
-  <!-- Reviews -->
-<section id="reviews" class="py-12 bg-[--bg]">
-  <div class="container mx-auto px-6 max-w-3xl">
-    <h3 class="text-2xl font-semibold mb-4 text-center">Guest Reviews</h3>
+  <!-- Reviews - Cleaned up with only Google Reviews -->
+  <section id="reviews" class="py-12 bg-[--bg]">
+    <div class="container mx-auto px-6 max-w-3xl">
+      <h3 class="text-2xl font-semibold mb-4 text-center">Guest Reviews</h3>
 
-    <!-- Modern Google-style rating & CTA -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-8" data-aos="fade-up">
-      <div class="flex flex-col items-center">
-        <div class="flex items-center gap-2 mb-2">
-          <div class="text-4xl font-bold text-green-600">4.7</div>
-          <div class="text-yellow-400 text-2xl">★★★★★</div>
-        </div>
-        <p class="text-gray-600 mb-6">Based on 150+ verified guest ratings</p>
+      <!-- Modern Google-style rating & CTA -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8" data-aos="fade-up">
+        <div class="flex flex-col items-center">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="text-4xl font-bold text-green-600">4.7</div>
+            <div class="text-yellow-400 text-2xl">★★★★★</div>
+          </div>
+          <p class="text-gray-600 mb-6">Based on 150+ verified guest ratings</p>
 
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <!-- FIXED: Direct reviews link -->
-          <a href="https://search.google.com/local/reviews?placeid=ChIJqQc5viAt5DkR-Sp6iKtfjLo"
-             target="_blank"
-             class="btn-primary hover:bg-blue-700 hover:text-white transition">
-            ⭐ Check and See Reviews Here
-          </a>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <!-- Direct Google Reviews Link -->
+            <a href="https://search.google.com/local/reviews?placeid=ChIJqQc5viAt5DkR-Sp6iKtfjLo"
+               target="_blank"
+               class="btn-primary hover:bg-blue-700 hover:text-white transition">
+              ⭐ Check and See Reviews Here
+            </a>
 
-          <a href="https://search.google.com/local/writereview?placeid=ChIJqQc5viAt5DkR-Sp6iKtfjLo"
-             target="_blank"
-             class="btn-secondary hover:bg-[--primary] hover:text-white transition">
-            ✍️ Write a Review
-          </a>
+            <!-- Write Review Link -->
+            <a href="https://search.google.com/local/writereview?placeid=ChIJqQc5viAt5DkR-Sp6iKtfjLo"
+               target="_blank"
+               class="btn-secondary hover:bg-[--primary] hover:text-white transition">
+              ✍️ Write a Review
+            </a>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Container for dynamic reviews -->
-    <div id="reviews-container" class="space-y-4"></div>
-  </div>
-</section>
+  <!-- Gallery -->
+  <section id="gallery" class="py-12" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <h3 class="text-2xl font-semibold text-center mb-6">Gallery</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <img src="images/frontporch.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Front porch">
+        <img src="images/image1.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Room interior">
+        <img src="images/imagen.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Mountain view">
+        <img src="images/image4.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Homestay exterior">
+        <img src="images/image8.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Common area">
+        <img src="images/photo1.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Bedroom">
+      </div>
+    </div>
+  </section>
+
   <!-- Map -->
   <section class="py-12 bg-[--bg]">
     <div class="container mx-auto px-6 max-w-4xl">
@@ -228,18 +242,6 @@
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3554.7243122309947!2d88.17403187522784!3d27.007269376590894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e42d20be3907a9%3A0xba8c5fab887a2af9!2sMajhidhura%20YANG%20'the%20sherpa'%20countryside%20Homestay!5e0!3m2!1sen!2sin!4v1760261312636!5m2!1sen!2sin"
         width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </section>
-   <!-- Gallery -->
-  <section id="gallery" class="py-12" data-aos="fade-up">
-    <div class="container mx-auto px-6">
-      <h3 class="text-2xl font-semibold text-center mb-6">Gallery</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        <img src="images/frontporch.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="">
-        <img src="images/image1.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="">
-        <img src="images/imagen.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="">
-        <img src="images/image4.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="">
-      </div>
     </div>
   </section>
 
@@ -364,44 +366,8 @@ Guests: ${data.guests}`;
         });
       }
 
-      // Load existing reviews from Firestore (if any)
-      function loadReviews() {
-        db.collection("reviews")
-          .orderBy("timestamp", "desc")
-          .limit(5)
-          .get()
-          .then((querySnapshot) => {
-            const reviewsContainer = document.getElementById('reviews-container');
-            if (!reviewsContainer) return;
-            
-            reviewsContainer.innerHTML = '';
-            
-            if (querySnapshot.empty) {
-              reviewsContainer.innerHTML = '<p class="text-center text-gray-600">No reviews yet. Be the first to write one!</p>';
-              return;
-            }
-            
-            querySnapshot.forEach((doc) => {
-              const review = doc.data();
-              const reviewElement = document.createElement('div');
-              reviewElement.className = 'bg-white rounded-lg shadow p-4';
-              reviewElement.innerHTML = `
-                <div class="flex items-center mb-2">
-                  <div class="text-yellow-400 mr-2">${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}</div>
-                  <strong class="text-gray-800">${review.name}</strong>
-                </div>
-                <p class="text-gray-600">${review.text}</p>
-                <div class="text-xs text-gray-400 mt-2">${new Date(review.timestamp?.toDate()).toLocaleDateString()}</div>
-              `;
-              reviewsContainer.appendChild(reviewElement);
-            });
-          })
-          .catch((error) => {
-            console.error("Error loading reviews: ", error);
-          });
-      }
-
-      loadReviews();
+      // All manual review functionality has been removed
+      // Only Google Reviews links remain
     });
   </script>
 </body>
