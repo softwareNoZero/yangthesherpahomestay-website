@@ -331,22 +331,7 @@ To: ${data.checkout}
 Guests: ${data.guests}`;
       }
 
-      // Regular form submission
-      if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e){
-          e.preventDefault();
-          const formData = getFormData();
-          if (!validateForm(formData)) return;
-          
-          // Here you can add code to submit to your backend
-          // For now, we'll show success message
-          if (bookingMessage) {
-            bookingMessage.classList.remove('hidden');
-            setTimeout(() => bookingMessage.classList.add('hidden'), 3500);
-          }
-          bookingForm.reset();
-        });
-      }
+     
 
       // WhatsApp submission
       if (whatsappSubmitBtn) {
