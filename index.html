@@ -1,257 +1,261 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yang "The Sherpa" Homestay</title>
 
-  <!-- Tailwind (runtime) -->
+  <title>Yang "The Sherpa" Homestay — Homestay in Majhidhura, Darjeeling</title>
+  <meta name="description" content="Yang 'The Sherpa' Homestay in Majhidhura, Darjeeling — cozy, pet-friendly homestay with panoramic Himalayan views, home-cooked Nepali meals, and secure parking. Book your stay near Majhidhura today." />
+  <link rel="canonical" href="https://www.yangthesherpahomestay.com/" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Preload hero image to improve Largest Contentful Paint -->
+  <link rel="preload" as="image" href="images/the1.jpg">
+
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-  <!-- AOS (Animate On Scroll) -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-  <!-- Firebase (compat) - Keeping for potential future use -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-
-  <script>
-    // --- Firebase config (keeping for potential future use) ---
-    const firebaseConfig = {
-      apiKey: "AIzaSyBz8I9n7b7oxlT5n3fT1EsFpsxJNboGGL8",
-      authDomain: "yang-the-sherpa-homestay.firebaseapp.com",
-      projectId: "yang-the-sherpa-homestay",
-      storageBucket: "yang-the-sherpa-homestay.firebasestorage.app",
-      messagingSenderId: "926697682675",
-      appId: "1:926697682675:web:7c956a67a472380eb06986",
-      measurementId: "G-G6NT7R4RPJ"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-  </script>
 
   <style type="text/tailwindcss">
     html { scroll-behavior: smooth; }
     :root { --primary: #1e40af; --accent: #0ea5e9; --bg: #f8fafc; }
-    
-    /* Custom button styles with black text */
+
+    /* Buttons: improved contrast for visibility */
     .btn-primary {
-      @apply bg-[--primary] text-black px-5 py-3 rounded-md shadow font-medium;
+      @apply bg-[--primary] text-white px-5 py-3 rounded-md shadow font-medium;
     }
     .btn-whatsapp {
-      @apply bg-[#25D366] text-black px-4 py-2 rounded-full shadow font-medium;
+      @apply bg-[#25D366] text-white px-4 py-2 rounded-full shadow font-medium;
     }
     .btn-contact {
-      @apply bg-[#25D366] text-black px-4 py-2 rounded-md shadow font-medium;
+      @apply bg-[#25D366] text-white px-4 py-2 rounded-md shadow font-medium;
     }
     .btn-secondary {
       @apply border border-[--primary] text-[--primary] px-5 py-2.5 rounded-md font-medium;
     }
   </style>
-</head>
 
+  <!-- Structured data: LodgingBusiness + FAQ (Majhidhura spelled correctly) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LodgingBusiness",
+        "name": "Yang 'The Sherpa' Homestay",
+        "image": "https://softwarenozero.github.io/yangthesherpahomestay-website/images/the1.jpg",
+        "@id": "https://www.yangthesherpahomestay.com/",
+        "url": "https://www.yangthesherpahomestay.com/",
+        "telephone": "+91-7407422123",
+        "priceRange": "$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Majhidhura",
+          "addressLocality": "Majhidhura",
+          "addressRegion": "West Bengal",
+          "postalCode": "734201",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 27.0073,
+          "longitude": 88.1740
+        },
+        "description": "Experience Sherpa hospitality, cozy rooms, and home-cooked Nepali meals at Yang 'The Sherpa' Homestay in Majhidhura, Darjeeling.",
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Parking", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Pet Friendly", "value": true }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Yang The Sherpa Homestay pet-friendly?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes — Yang The Sherpa Homestay in Majhidhura is pet-friendly. Well-behaved pets are welcome; please mention them when you inquire." }
+          },
+          {
+            "@type": "Question",
+            "name": "How far is the homestay from Darjeeling town?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yang The Sherpa Homestay is approximately 25 km from Darjeeling town (road distance). Travel times vary with traffic and weather." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Yang 'The Sherpa' Homestay — Homestay in Majhidhura, Darjeeling">
+  <meta property="og:description" content="Cozy, pet-friendly homestay in Majhidhura with Himalayan views, home-cooked Nepali meals, and secure parking." />
+  <meta property="og:image" content="https://softwarenozero.github.io/yangthesherpahomestay-website/images/the1.jpg" />
+  <meta property="og:url" content="https://www.yangthesherpahomestay.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yang 'The Sherpa' Homestay — Homestay in Majhidhura, Darjeeling">
+  <meta name="twitter:description" content="Cozy, pet-friendly homestay in Majhidhura with Himalayan views and home-cooked Nepali meals." />
+  <meta name="twitter:image" content="https://softwarenozero.github.io/yangthesherpahomestay-website/images/the1.jpg">
+
+</head>
 <body class="bg-[--bg] text-gray-800 pt-16">
 
-  <!-- Header -->
   <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-md">
     <div class="container mx-auto flex items-center justify-between px-4 py-3">
-      <!-- Logo and Title -->
       <div class="flex items-center space-x-3">
         <div class="w-10 h-10 rounded-lg bg-[--primary] flex items-center justify-center text-white font-bold text-lg">Y</div>
-        <div class="text-lg md:text-xl font-semibold text-[--primary]">Yang "The Sherpa" Homestay</div>
+        <h2 class="text-lg md:text-xl font-semibold text-[--primary]">Yang "The Sherpa" Homestay</h2>
       </div>
 
-      <!-- Navigation -->
-      <nav class="hidden md:flex items-center space-x-6 font-medium">
-        <a href="#booking" class="text-[--primary] transition hover:text-blue-700 hover:underline">Book</a>
-        <a href="#gallery" class="text-[--primary] transition hover:text-blue-700 hover:underline">Gallery</a>
-        <a href="#reviews" class="text-[--primary] transition hover:text-blue-700 hover:underline">Reviews</a>
-        <a href="https://wa.me/917407422123" 
-           target="_blank" 
-           class="btn-contact hover:bg-[#1ebe57] transition">
-           Contact
-        </a>
+      <nav class="hidden md:flex items-center space-x-6 font-medium" aria-label="Main Navigation">
+        <a href="#booking" class="text-[--primary] transition hover:text-blue-700 hover:underline">Book Your Darjeeling Stay</a>
+        <a href="#gallery" class="text-[--primary] transition hover:text-blue-700 hover:underline">Gallery & Photos</a>
+        <a href="#reviews" class="text-[--primary] transition hover:text-blue-700 hover:underline">Guest Reviews</a>
+        <a href="https://wa.me/917407422123" target="_blank" class="btn-contact hover:bg-[#1ebe57] transition" rel="noopener noreferrer">Contact</a>
       </nav>
 
-      <!-- Mobile Contact Button -->
       <div class="md:hidden">
-        <a href="https://wa.me/917407422123" 
-           target="_blank" 
-           class="btn-contact hover:bg-[#1ebe57] transition text-sm">
-           Contact
-        </a>
+        <a href="https://wa.me/917407422123" target="_blank" class="btn-contact hover:bg-[#1ebe57] transition text-sm" rel="noopener noreferrer">Contact</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="relative w-full h-screen md:h-[80vh]">
-    <img src="images/the1.jpg" alt="Yang The Sherpa Homestay" class="w-full h-full object-cover">
+    <img src="images/the1.jpg" alt="Panoramic view from Yang The Sherpa Homestay in Majhidhura, Darjeeling" class="w-full h-full object-cover" fetchpriority="high">
     <div class="absolute inset-0 bg-black/35 flex items-center">
       <div class="container mx-auto px-6 text-white">
-        <h1 class="text-3xl md:text-5xl font-bold leading-tight max-w-3xl" data-aos="fade-up" data-aos-delay="100">
-          Yang "The Sherpa" Countryside Homestay
-        </h1>
-        <p class="mt-4 max-w-2xl text-base md:text-lg" data-aos="fade-up" data-aos-delay="200">
-          Cozy rooms, home-cooked meals, and Himalayan views in a peaceful pine-forest setting — Majhidhura, Darjeeling.
-        </p>
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight max-w-3xl" data-aos="fade-up" data-aos-delay="100">Yang "The Sherpa" Countryside Homestay in Majhidhura</h1>
+        <p class="mt-4 max-w-2xl text-base md:text-lg" data-aos="fade-up" data-aos-delay="200">Cozy rooms, home-cooked Nepali meals, and panoramic Himalayan views in a peaceful pine-forest setting — <strong>Majhidhura, Darjeeling</strong>.</p>
         <div class="mt-6 flex flex-col sm:flex-row gap-3" data-aos="fade-up" data-aos-delay="300">
-          <a href="#booking" class="btn-primary hover:bg-blue-700 hover:text-white transition">Book Your Stay</a>
-          <a href="https://wa.me/917407422123" target="_blank"
-             class="btn-whatsapp hover:bg-[#1ebe57] transition">
-            💬 Contact on WhatsApp
-          </a>
+          <a href="#booking" class="btn-primary hover:bg-blue-700 hover:text-white transition">Book Your Stay Today</a>
+          <a href="https://wa.me/917407422123" target="_blank" class="btn-whatsapp hover:bg-[#1ebe57] transition" rel="noopener noreferrer">💬 Contact on WhatsApp</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About + Room Slider -->
   <section class="py-12 container mx-auto px-6 md:px-12">
     <div class="md:flex md:items-center md:gap-12">
-      <!-- Room Slider -->
       <div class="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg group" data-aos="fade-right">
-        <img id="room-slider" src="images/photo1.jpg" alt="Room sample"
-             class="w-full h-72 object-cover transition-opacity duration-700 ease-in-out opacity-100 rounded-lg">
+        <img id="room-slider" src="images/photo1.jpg" alt="Cozy bedroom at Yang The Sherpa Homestay in Majhidhura" class="w-full h-72 object-cover transition-opacity duration-700 ease-in-out opacity-100 rounded-lg" loading="lazy">
 
-        <!-- Navigation Buttons -->
-        <button id="prev-room"
-                class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-black px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
-          ←
-        </button>
-        <button id="next-room"
-                class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-black px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
-          →
-        </button>
+        <button id="prev-room" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition" aria-label="Previous room photo">←</button>
+        <button id="next-room" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition" aria-label="Next room photo">→</button>
 
-        <!-- Dots indicator -->
-        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-          <span class="dot w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer"></span>
-          <span class="dot w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer"></span>
-          <span class="dot w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer"></span>
-          <span class="dot w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer"></span>
-          <span class="dot w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer"></span>
+        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2" role="tablist">
+          <span class="dot w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer" role="tab" aria-label="Room photo 1"></span>
+          <span class="dot w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer" role="tab" aria-label="Room photo 2"></span>
+          <span class="dot w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer" role="tab" aria-label="Room photo 3"></span>
+          <span class="dot w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer" role="tab" aria-label="Room photo 4"></span>
+          <span class="dot w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer" role="tab" aria-label="Room photo 5"></span>
         </div>
       </div>
 
       <div class="md:w-1/2 mt-6 md:mt-0" data-aos="fade-left">
-        <h2 class="text-2xl font-semibold">Your Himalayan Getaway</h2>
-        <p class="mt-3 text-gray-700">
-          Warm hospitality, traditional Nepali decor, and panoramic mountain views — perfect for rest and nature lovers.
-        </p>
-        <ul class="mt-4 list-disc list-inside text-gray-700 space-y-1">
-          <li>Private cozy rooms</li>
-          <li>Fresh home-cooked meals</li>
-          <li>Free Wi-Fi & parking</li>
+        <h2 class="text-2xl font-semibold">Your Himalayan Getaway in Majhidhura</h2>
+        <p class="mt-3 text-gray-700">Looking for a <strong>homestay in Majhidhura</strong> or <strong>homestay near Majhidhura</strong>? Yang “The Sherpa” Homestay offers cozy rooms, Sherpa hospitality, and panoramic mountain views — perfect for nature lovers and families.</p>
+        <h3 class="mt-4 text-xl font-medium">Homestay Amenities:</h3>
+        <ul class="mt-2 list-disc list-inside text-gray-700 space-y-1">
+          <li>Private cozy rooms with attached bath</li>
+          <li>Fresh, organic home-cooked Nepali meals</li>
+          <li>Free Wi-Fi & secure on-site parking</li>
         </ul>
-        <p class="mt-4 italic text-[--primary]">🐾 Pet-friendly — say hi to our homestay cat!</p>
+        <p class="mt-4 italic text-[--primary]">🐾 <strong>Pet-friendly Majhidhura Homestay</strong> — say hi to our friendly homestay cat!</p>
       </div>
     </div>
   </section>
 
-  <!-- Booking -->
-  <section id="booking" class="py-12" data-aos="fade-up" data-aos-offset="200">
+  <section id="booking" class="py-12 bg-gray-50" data-aos="fade-up" data-aos-offset="200">
     <div class="max-w-lg mx-auto px-6">
-      <div class="bg-white rounded-2xl shadow-lg p-6">
-        <h3 class="text-xl font-semibold mb-4 text-center">Book Your Stay</h3>
-        <form id="booking-form" class="space-y-4">
-          <input id="guest-name" type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required>
-          <input id="guest-email" type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required>
-          <input id="guest-phone" type="tel" placeholder="Phone" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required>
+      <div class="bg-white rounded-2xl shadow-xl p-6">
+        <h3 class="text-xl font-semibold mb-4 text-center">Inquire & Book Your Majhidhura Homestay</h3>
+        <form id="booking-form" class="space-y-4" role="form" aria-label="Booking Inquiry Form">
+          <input id="guest-name" type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required aria-label="Your Name">
+          <input id="guest-email" type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required aria-label="Your Email">
+          <input id="guest-phone" type="tel" placeholder="Phone" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required aria-label="Your Phone Number">
           <div class="flex gap-3">
             <div class="flex-1">
-              <label class="block text-sm mb-1 font-medium">From (Check-in)</label>
+              <label for="checkin-date" class="block text-sm mb-1 font-medium">From (Check-in)</label>
               <input id="checkin-date" type="date" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required>
             </div>
             <div class="flex-1">
-              <label class="block text-sm mb-1 font-medium">To (Check-out)</label>
+              <label for="checkout-date" class="block text-sm mb-1 font-medium">To (Check-out)</label>
               <input id="checkout-date" type="date" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required>
             </div>
           </div>
-          <input id="num-guests" type="number" min="1" placeholder="Number of Guests" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required>
-          
+          <input id="num-guests" type="number" min="1" placeholder="Number of Guests" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required aria-label="Number of Guests">
+
           <div class="flex gap-3">
-            <button type="submit" class="flex-1 btn-primary hover:bg-blue-700 hover:text-white transition">
-              Submit Booking
-            </button>
-            <button type="button" id="whatsapp-submit" class="flex-1 btn-whatsapp hover:bg-[#1ebe57] transition">
-              📱 WhatsApp
-            </button>
+            <button type="submit" class="flex-1 btn-primary hover:bg-blue-700 hover:text-white transition">Submit Booking Inquiry</button>
+            <button type="button" id="whatsapp-submit" class="flex-1 btn-whatsapp hover:bg-[#1ebe57] transition">📱 WhatsApp Inquiry</button>
           </div>
-          
+
           <p id="booking-message" class="text-green-600 mt-3 text-center hidden">✅ Booking ready — check WhatsApp!</p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- Reviews - Cleaned up with only Google Reviews -->
-  <section id="reviews" class="py-12 bg-[--bg]">
+  <section id="reviews" class="py-12 bg-gray-100">
     <div class="container mx-auto px-6 max-w-3xl">
-      <h3 class="text-2xl font-semibold mb-4 text-center">Guest Reviews</h3>
-
-      <!-- Modern Google-style rating & CTA -->
+      <h2 class="text-2xl font-semibold mb-4 text-center">Guest Reviews of Yang "The Sherpa" Homestay</h2>
       <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8" data-aos="fade-up">
         <div class="flex flex-col items-center">
           <div class="flex items-center gap-2 mb-2">
             <div class="text-4xl font-bold text-green-600">4.8</div>
-            <div class="text-yellow-400 text-2xl">★★★★★</div>
+            <div class="text-yellow-400 text-2xl" aria-label="4 point 8 stars out of 5">★★★★★</div>
           </div>
-          <p class="text-gray-600 mb-6">Based on 150+ verified guest ratings</p>
-
+          <p class="text-gray-600 mb-6">Based on 150+ verified guest ratings on Google</p>
           <div class="flex flex-col sm:flex-row gap-3 justify-center">
-            <!-- Direct Google Reviews Link -->
-            <a href="https://search.google.com/local/reviews?placeid=ChIJqQc5viAt5DkR-Sp6iKtfjLo"
-               target="_blank"
-               class="btn-primary hover:bg-blue-700 hover:text-white transition">
-              ⭐ Check and See Reviews Here
-            </a>
-
-            <!-- Write Review Link -->
-            <a href="https://search.google.com/local/writereview?placeid=ChIJqQc5viAt5DkR-Sp6iKtfjLo"
-               target="_blank"
-               class="btn-secondary hover:bg-[--primary] hover:text-white transition">
-              ✍️ Write a Review
-            </a>
+            <a href="https://search.google.com/local/reviews?placeid=ChIJqQc5viAt5DkR-Sp6iKtfjLo" target="_blank" class="btn-primary hover:bg-blue-700 hover:text-white transition" rel="noopener noreferrer">⭐ Check and See All Reviews Here</a>
+            <a href="https://search.google.com/local/writereview?placeid=ChIJqQc5viAt5DkR-Sp6iKtfjLo" target="_blank" class="btn-secondary hover:bg-[--primary] hover:text-white transition" rel="noopener noreferrer">✍️ Write a Review</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
   <section id="gallery" class="py-12" data-aos="fade-up">
     <div class="container mx-auto px-6">
-      <h3 class="text-2xl font-semibold text-center mb-6">Gallery</h3>
+      <h2 class="text-2xl font-semibold text-center mb-6">Homestay Gallery: Rooms, Views, and Nature</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        <img src="images/frontporch.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Front porch">
-        <img src="images/image1.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Room interior">
-        <img src="images/imagen.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Mountain view">
-        <img src="images/image4.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Homestay exterior">
-        <img src="images/image8.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Common area">
-        <img src="images/photo1.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Bedroom">
+        <img src="images/frontporch.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Front porch at Yang The Sherpa Homestay in Majhidhura">
+        <img src="images/image1.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Comfortable homestay room interior at Yang The Sherpa in Majhidhura">
+        <img src="images/imagen.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Panoramic mountain view from Yang The Sherpa Homestay, Majhidhura">
+        <img src="images/image4.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Traditional exterior of Yang The Sherpa Homestay in Majhidhura">
+        <img src="images/image8.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Warm dining area at Yang The Sherpa Homestay, Majhidhura">
+        <img src="images/photo1.jpg" class="rounded-lg w-full h-36 object-cover shadow" alt="Double bedroom at Yang The Sherpa Homestay in Majhidhura">
       </div>
     </div>
   </section>
 
-  <!-- Map -->
-  <section class="py-12 bg-[--bg]">
+  <section class="py-12 bg-gray-100">
     <div class="container mx-auto px-6 max-w-4xl">
-      <h3 class="text-2xl font-semibold text-center mb-4">Find Us on Google Maps</h3>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3554.7243122309947!2d88.17403187522784!3d27.007269376590894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e42d20be3907a9%3A0xba8c5fab887a2af9!2sMajhidhura%20YANG%20'the%20sherpa'%20countryside%20Homestay!5e0!3m2!1sen!2sin!4v1760261312636!5m2!1sen!2sin"
-        width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
+      <h2 class="text-2xl font-semibold text-center mb-4">Location: Majhidhura, Near Darjeeling</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3554.7243122309947!2d88.17403187522784!3d27.007269376590894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e42d20be3907a9%3A0xba8c5fab887a2af9!2sMajhidhura%20YANG%20'the%20sherpa'%20countryside%20Homestay!5e0!3m2!1sen!2sin!4v1760261312636!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen loading="lazy" title="Location of Yang The Sherpa Homestay on Google Maps"></iframe>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-white py-6">
-    <div class="container mx-auto px-6 text-center text-sm text-gray-600">© Yang "The Sherpa" Homestay</div>
+    <div class="container mx-auto px-6 text-center text-sm text-gray-600">
+      <p>© 2024 Yang "The Sherpa" Homestay. All rights reserved.</p>
+      <p class="mt-1">Majhidhura, Darjeeling District, West Bengal, India. | Phone: +91 7407422123</p>
+      <p class="mt-2">
+        <a href="#booking" class="underline">Book a Stay</a> |
+        <a href="#gallery" class="underline">View Gallery</a> |
+        <a href="#reviews" class="underline">Guest Reviews</a> |
+        <a href="https://maps.app.goo.gl/" target="_blank" rel="noopener noreferrer" class="underline">Find Us on Maps</a>
+      </p>
+    </div>
   </footer>
 
   <script>
-    // AOS init
     if (window.AOS) AOS.init({ duration: 600, once: true });
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -322,27 +326,18 @@
       }
 
       function createWhatsAppMessage(data) {
-        return `Hello! I would like to book a stay at Yang "The Sherpa" Homestay.
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone}
-From: ${data.checkin}
-To: ${data.checkout}
-Guests: ${data.guests}`;
+        return `Hello! I would like to book a stay at Yang "The Sherpa" Homestay in Majhidhura.\nName: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nFrom: ${data.checkin}\nTo: ${data.checkout}\nGuests: ${data.guests}`;
       }
 
-     
-
-      // WhatsApp submission
       if (whatsappSubmitBtn) {
         whatsappSubmitBtn.addEventListener('click', function(e){
           e.preventDefault();
           const formData = getFormData();
           if (!validateForm(formData)) return;
-          
+
           const msg = createWhatsAppMessage(formData);
-          window.open('https://wa.me/917407422123?text=' + encodeURIComponent(msg), '_blank');
-          
+          window.open('https://wa.me/917407422123?text=' + encodeURIComponent(msg), '_blank', 'noopener noreferrer');
+
           if (bookingMessage) {
             bookingMessage.classList.remove('hidden');
             setTimeout(() => bookingMessage.classList.add('hidden'), 3500);
@@ -351,11 +346,10 @@ Guests: ${data.guests}`;
         });
       }
 
-      // All manual review functionality has been removed
-      // Only Google Reviews links remain
     });
   </script>
 </body>
 </html>
+
 
 
