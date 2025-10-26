@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://softwarenozero.github.io/yangthesherpahomestay-website/sitemap.xml 
