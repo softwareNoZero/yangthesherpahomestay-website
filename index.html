@@ -23,7 +23,7 @@
     /* Adjusted background color for better contrast and button visibility */
     :root { --primary: #1e40af; --accent: #0ea5e9; --bg: #f7f7f7; }
 
-    /* Buttons: improved contrast for visibility */
+    /* Buttons: primary contrast is good */
     .btn-primary {
       @apply bg-[--primary] text-white px-5 py-3 rounded-md shadow font-medium transition duration-300;
     }
@@ -33,10 +33,12 @@
     .btn-contact {
       @apply bg-[#25D366] text-white px-4 py-2 rounded-md shadow font-medium transition duration-300;
     }
-    /* Secondary button contrast improvement */
+    /* Secondary button visibility FIX: Distinct border and hover state */
     .btn-secondary {
-      @apply border border-gray-400 text-gray-700 px-5 py-2.5 rounded-md font-medium hover:border-[--primary] hover:text-[--primary] transition duration-300;
+      @apply border-2 border-gray-400 text-gray-700 px-5 py-2.5 rounded-md font-medium hover:bg-gray-100 hover:border-[--primary] hover:text-[--primary] transition duration-300;
     }
+    /* Button for 'Write a Review' (which uses btn-secondary) is now clearly outlined. */
+    /* If you wanted it to be colored like the primary button, you could use btn-primary instead in the HTML. */
   </style>
 
   <script type="application/ld+json">
@@ -158,7 +160,7 @@
 
       <div class="md:w-1/2 mt-6 md:mt-0" data-aos="fade-left">
         <h2 class="text-2xl font-semibold">Your Tranquil Himalayan Homestay in Majhidhura, Darjeeling</h2>
-        <p class="mt-3 text-gray-700">Looking for a peaceful <strong>homestay in Majhidhura</strong> or <strong>homestay near Darjeeling</strong>? Yang “The Sherpa” Homestay offers cozy rooms, authentic Sherpa hospitality, and panoramic mountain views — perfect for nature lovers and families seeking an escape.</p>
+        <p class="mt-3 text-gray-700">Looking for a peaceful **homestay in Majhidhura** or **homestay near Darjeeling**? Yang “The Sherpa” Homestay offers cozy rooms, authentic Sherpa hospitality, and panoramic mountain views — perfect for nature lovers and families seeking an escape.</p>
         <h3 class="mt-4 text-xl font-medium">Top Homestay Amenities:</h3>
         <ul class="mt-2 list-disc list-inside text-gray-700 space-y-1">
           <li>Private cozy rooms with attached bath</li>
@@ -175,9 +177,20 @@
       <div class="bg-white rounded-2xl shadow-xl p-6">
         <h3 class="text-xl font-semibold mb-4 text-center">Inquire & Book Your Authentic Majhidhura Homestay Experience</h3>
         <form id="booking-form" class="space-y-4" role="form" aria-label="Booking Inquiry Form for Yang The Sherpa Homestay">
-          <input id="guest-name" type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required aria-label="Your Name">
-          <input id="guest-email" type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required aria-label="Your Email">
-          <input id="guest-phone" type="tel" placeholder="Phone" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required aria-label="Your Phone Number">
+          
+          <div>
+            <label for="guest-name" class="block text-sm mb-1 font-medium">Your Full Name</label>
+            <input id="guest-name" type="text" placeholder="e.g., Sonam Sherpa" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required aria-label="Your Name">
+          </div>
+          <div>
+            <label for="guest-email" class="block text-sm mb-1 font-medium">Email Address</label>
+            <input id="guest-email" type="email" placeholder="email@example.com" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required aria-label="Your Email">
+          </div>
+          <div>
+            <label for="guest-phone" class="block text-sm mb-1 font-medium">Phone Number</label>
+            <input id="guest-phone" type="tel" placeholder="+91 74074xxxx" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required aria-label="Your Phone Number">
+          </div>
+
           <div class="flex gap-3">
             <div class="flex-1">
               <label for="checkin-date" class="block text-sm mb-1 font-medium">From (Check-in)</label>
@@ -188,8 +201,12 @@
               <input id="checkout-date" type="date" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required>
             </div>
           </div>
-          <input id="num-guests" type="number" min="1" placeholder="Number of Guests" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required aria-label="Number of Guests">
 
+          <div>
+            <label for="num-guests" class="block text-sm mb-1 font-medium">Number of Guests</label>
+            <input id="num-guests" type="number" min="1" placeholder="Number of Guests" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary]" required aria-label="Number of Guests">
+          </div>
+          
           <div class="flex flex-col sm:flex-row gap-3">
             <button type="submit" class="flex-1 btn-primary hover:bg-blue-700 hover:text-white transition">Submit Booking Inquiry</button>
             <button type="button" id="whatsapp-submit" class="flex-1 btn-whatsapp hover:bg-[#1ebe57] transition">📱 WhatsApp Inquiry</button>
@@ -258,7 +275,7 @@
     if (window.AOS) AOS.init({ duration: 600, once: true });
 
     document.addEventListener('DOMContentLoaded', () => {
-      // ROOM SLIDER (No SEO change needed here)
+      // ROOM SLIDER (No change needed here)
       const roomImages = ["images/red.jpg","images/photo1.jpg","images/photo2.jpg","images/photo3.jpg","images/photo4.jpg","images/photo5.jpg"];
       let currentIndex = 0;
       const slider = document.getElementById("room-slider");
@@ -308,7 +325,7 @@
 
       updateSlide(0); // Initialize first slide
 
-      // BOOKING FORM FUNCTIONALITY (No SEO change needed here)
+      // BOOKING FORM FUNCTIONALITY (No change needed here)
       const bookingForm = document.getElementById('booking-form');
       const bookingMessage = document.getElementById('booking-message');
       const whatsappSubmitBtn = document.getElementById('whatsapp-submit');
