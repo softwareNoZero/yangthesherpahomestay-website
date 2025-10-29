@@ -23,7 +23,7 @@
     /* Adjusted background color for better contrast and button visibility */
     :root { --primary: #1e40af; --accent: #0ea5e9; --bg: #f7f7f7; }
 
-    /* Buttons: primary contrast is good */
+    /* Buttons: primary contrast is solid blue on white */
     .btn-primary {
       @apply bg-[--primary] text-white px-5 py-3 rounded-md shadow font-medium transition duration-300;
     }
@@ -33,12 +33,11 @@
     .btn-contact {
       @apply bg-[#25D366] text-white px-4 py-2 rounded-md shadow font-medium transition duration-300;
     }
-    /* Secondary button visibility FIX: Distinct border and hover state */
+    /* Secondary button visibility FIX: Distinct PRIMARY color border and text */
     .btn-secondary {
-      @apply border-2 border-gray-400 text-gray-700 px-5 py-2.5 rounded-md font-medium hover:bg-gray-100 hover:border-[--primary] hover:text-[--primary] transition duration-300;
+      /* This ensures the button is clearly blue on white, solving the visibility issue */
+      @apply border-2 border-[--primary] text-[--primary] px-5 py-2.5 rounded-md font-medium hover:bg-[--primary] hover:text-white transition duration-300;
     }
-    /* Button for 'Write a Review' (which uses btn-secondary) is now clearly outlined. */
-    /* If you wanted it to be colored like the primary button, you could use btn-primary instead in the HTML. */
   </style>
 
   <script type="application/ld+json">
@@ -230,7 +229,7 @@
           <p class="text-gray-600 mb-6">Based on 150+ verified guest ratings on Google</p>
           <div class="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="https://search.google.com/local/reviews?placeid=ChIJqQc5viAt5DkR-Sp6iKtfjLo" target="_blank" class="btn-primary hover:bg-blue-700 hover:text-white transition" rel="noopener noreferrer">⭐ Check and See All Reviews Here</a>
-            <a href="https://search.google.com/local/writereview?placeid=ChIJqQc5viAt5DkR-Sp6iKtfjLo" target="_blank" class="btn-secondary hover:bg-[--primary] hover:text-white transition" rel="noopener noreferrer">✍️ Write a Review</a>
+            <a href="https://search.google.com/local/writereview?placeid=ChIJqQc5viAt5DkR-Sp6iKtfjLo" target="_blank" class="btn-secondary transition" rel="noopener noreferrer">✍️ Write a Review</a>
           </div>
         </div>
       </div>
