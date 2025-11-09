@@ -34,9 +34,15 @@
       @apply bg-[#25D366] text-white px-4 py-2 rounded-md shadow font-medium transition duration-300;
     }
     /* Secondary button visibility FIX: Distinct border and hover state */
-    .btn-secondary {
-  @apply border border-[--primary] bg-white text-[--primary] px-5 py-2.5 rounded-md font-medium hover:bg-[--primary] hover:text-white transition;
+  .btn-secondary {
+  @apply bg-[#25D366] text-white px-5 py-2.5 rounded-md font-semibold shadow hover:bg-[#1ebe5d] transition duration-300;
 }
+
+
+    /* Make sure text on Contact button is visible in all situations */
+    .btn-contact:hover {
+      @apply bg-[#1ebe57] text-white;
+    }
 
     /* Button for 'Write a Review' (which uses btn-secondary) is now clearly outlined. */
     /* If you wanted it to be colored like the primary button, you could use btn-primary instead in the HTML. */
