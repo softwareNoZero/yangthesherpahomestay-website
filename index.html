@@ -35,8 +35,9 @@
     }
     /* Secondary button visibility FIX: Distinct border and hover state */
     .btn-secondary {
-      @apply border-2 border-gray-400 text-gray-700 px-5 py-2.5 rounded-md font-medium hover:bg-gray-100 hover:border-[--primary] hover:text-[--primary] transition duration-300;
-    }
+  @apply border border-[--primary] bg-white text-[--primary] px-5 py-2.5 rounded-md font-medium hover:bg-[--primary] hover:text-white transition;
+}
+
     /* Button for 'Write a Review' (which uses btn-secondary) is now clearly outlined. */
     /* If you wanted it to be colored like the primary button, you could use btn-primary instead in the HTML. */
   </style>
